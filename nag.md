@@ -35,7 +35,8 @@ Solution for customer system unscheduled incident repair action (UIRA) and long
 - Create XML (or JSON TBD) file which contains hardware failures
     - Must gather BMC deconfig and guarded data
     - Gather PSUs, Fans, and Hotplug devices if any service actions are required
-    - Include timestamp of the platform event log (PEL) that triggered the Guarded hardware
+    - Include timestamp of the platform event log (PEL) that triggered the 
+	guarded hardware
     - Include inventory object path 
     - Include deconfig table showing all resources deconfigured by association
     - Include information on each guarded unit:
@@ -43,17 +44,18 @@ Solution for customer system unscheduled incident repair action (UIRA) and long
         - Location code
         - PHAL Device Tree shared with Hostboot
 
-- Periodically create XML if there are resources guarded or deconfigured under the following events:
+- Periodically create XML if there are resources guarded or deconfigured under 
+	the following events:
     - On power on
     - At end of R&V repair
     - Monthly check
     - During BMC failover
     - Optionally ignore SRC for selectable guarded hardware
 
-- If hardware failures are present, log a Call Home Serviceable Event Log to indicate the condition.
+- If hardware failures are present, log a Call Home Serviceable Event Log to 
+	indicate the condition.
 
-- Export XML to HMC upon request
-- Export XML to OS/PLDM on request
+- Export XML to HMC, and OS/PLDM on request
    - Provide interface for call for XML file
         - Redfish and D-Bus interface for requests for data from HMC and PLDM
 
