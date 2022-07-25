@@ -44,20 +44,34 @@ Solution for customer system unscheduled incident repair action (UIRA) and long
         - Location code
         - PHAL Device Tree shared with Hostboot
 
-- Periodically create XML if there are resources guarded or deconfigured under 
-	the following events:
-    - On power on
+- Periodically create XML and raise servicable event if there are resources 
+	guarded or deconfigured under the following events:
+    - On BMC power on
     - At end of R&V repair
-    - Monthly check
-    - During BMC failover
-    - Optionally ignore SRC for selectable guarded hardware
+    - A monthly check
+        - A periodic "Pending HW Repair Reminder" timer in BMC. The timer will 
+	trigger BMC to check the Gard record during runtime, if Garded 
+	hardware exist, create a new Call Home Serviceable Event with new SRC
+
+    - Optionally ignore creating SRC for selectable guarded hardware
+    - During BMC failover (If redundant BMCs are supported in future)
 
 - If hardware failures are present, log a Call Home Serviceable Event Log to 
-	indicate the condition.
+	indicate the condition by creating PEL with associated system reference code (SRC). 
+
+- The unique SRC description indicating that there are "Defective CEC Hardware 
+	in the system pending repair".
+    - SRC B150F138 for [P10 systems](https://supportcontent.ibm.com/support/
+	pages/service-action-required-srcs-b175f138-or-b150f138?check_logged_in=1)
+    - Extended words should be populated with corresponding data: [Defined](
+	https://supportcontent.ibm.com/support/pages/
+	service-action-required-srcs-b175f138-or-b150f138?check_logged_in=1)
 
 - Export XML to HMC, and OS/PLDM on request
    - Provide interface for call for XML file
         - Redfish and D-Bus interface for requests for data from HMC and PLDM
+
+- Command line interface for display of data on BMC
 
 ## Proposed Design
 
