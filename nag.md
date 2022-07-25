@@ -61,11 +61,8 @@ Solution for customer system unscheduled incident repair action (UIRA) and long
 
 - The unique SRC description indicating that there are "Defective CEC Hardware 
 	in the system pending repair".
-    - SRC B150F138 for [P10 systems](https://supportcontent.ibm.com/support/
-	pages/service-action-required-srcs-b175f138-or-b150f138?check_logged_in=1)
-    - Extended words should be populated with corresponding data: [Defined](
-	https://supportcontent.ibm.com/support/pages/
-	service-action-required-srcs-b175f138-or-b150f138?check_logged_in=1)
+    - SRC B150F138 for [P10 systems](https://supportcontent.ibm.com/support/pages/service-action-required-srcs-b175f138-or-b150f138?check_logged_in=1)
+    - Extended words should be populated with corresponding data: [Defined](https://supportcontent.ibm.com/support/pages/service-action-required-srcs-b175f138-or-b150f138?check_logged_in=1)
 
 - Export XML to HMC, and OS/PLDM on request
    - Provide interface for call for XML file
