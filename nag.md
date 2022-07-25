@@ -50,7 +50,7 @@ Solution for customer system unscheduled incident repair action (UIRA) and long
     - At end of R&V repair
     - A monthly check
         - A periodic "Pending HW Repair Reminder" timer in BMC. The timer will 
-	trigger BMC to check the Gard record during runtime, if Garded 
+	trigger BMC to check the guard record during runtime, if guarded 
 	hardware exist, create a new Call Home Serviceable Event with new SRC
 
     - Optionally ignore creating SRC for selectable guarded hardware
