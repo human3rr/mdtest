@@ -1,10 +1,10 @@
 # Nag Functionality
 
 Author: Noah Brewer
-  < Human3rr, Shantappa Teekappanavar, Matt Spinler, Kanisha Patel >
+  < Human3rr, Shantappa Teekappanavar, Matt Spinler >
 
 Created: July 13, 2022
-Last Updated: July 19, 2022
+Last Updated: July 25, 2022
 
 ## Problem Description
 
